@@ -51,12 +51,12 @@ jobs:
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}} --target install
 
     - name: Archive
-      run: 7z a tdlib.zip ${{github.workspace}}/tdlib
+      run: 7z a tdlib-${{ steps.get-git-tag.outputs.git-tag }}.zip ${{github.workspace}}/tdlib
 
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        files: tdlib.zip
+        files: tdlib-*.zip
         tag_name: ${{ steps.get-git-tag.outputs.git-tag }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
