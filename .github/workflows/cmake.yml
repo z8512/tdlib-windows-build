@@ -23,7 +23,7 @@ jobs:
       with:
         repository: tdlib/td
         fetch-depth: 0
-        ref: "1d15bafb5003cf36dbfdd4c839dbcc56368fb48e"
+        ref: "c5dfa597828e9250ac29b6e37320220411bce870"
 
     - name: Get Git Tag
       id: get-git-tag
